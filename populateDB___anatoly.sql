@@ -1,11 +1,11 @@
 
 -- where gender 1 - male, 2 - female
 
- INSERT INTO developers (name, gender, age) VALUES ('Tom', 1, 32);
- INSERT INTO developers (name, gender, age) VALUES ('Jerry', 1, 18);
- INSERT INTO developers (name, gender, age) VALUES ('Vadim', 1, 26);
- INSERT INTO developers (name, gender, age) VALUES ('Misha', 1, 39);
- INSERT INTO developers (name, gender, age) VALUES ('Dasha', 2, 28);
+ INSERT INTO developers (id, name, gender, age) VALUES (1, 'Tom', 1, 32);
+ INSERT INTO developers (id, name, gender, age) VALUES (2, 'Jerry', 1, 18);
+ INSERT INTO developers (id, name, gender, age) VALUES (3, 'Vadim', 1, 26);
+ INSERT INTO developers (id, name, gender, age) VALUES (4, 'Misha', 1, 39);
+ INSERT INTO developers (id, name, gender, age) VALUES (5, 'Dasha', 2, 28);
 
 -- where level 1 - junior, 2 - middle, 3 - senior
 
