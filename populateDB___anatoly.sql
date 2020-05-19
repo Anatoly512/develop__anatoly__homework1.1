@@ -1,19 +1,19 @@
 
--- where gender 1 - male, 2 - female
+-- where gender ENUM ('MALE', 'FEMALE')
 
- INSERT INTO developers (id, name, gender, age) VALUES (1, 'Tom', 1, 32);
- INSERT INTO developers (id, name, gender, age) VALUES (2, 'Jerry', 1, 18);
- INSERT INTO developers (id, name, gender, age) VALUES (3, 'Vadim', 1, 26);
- INSERT INTO developers (id, name, gender, age) VALUES (4, 'Misha', 1, 39);
- INSERT INTO developers (id, name, gender, age) VALUES (5, 'Dasha', 2, 28);
+ INSERT INTO developers (id, name, gender, age) VALUES (1, 'Tom', 'MALE', 32);
+ INSERT INTO developers (id, name, gender, age) VALUES (2, 'Jerry', 'MALE', 18);
+ INSERT INTO developers (id, name, gender, age) VALUES (3, 'Vadim', 'MALE', 26);
+ INSERT INTO developers (id, name, gender, age) VALUES (4, 'Misha', 'MALE', 39);
+ INSERT INTO developers (id, name, gender, age) VALUES (5, 'Dasha', 'FEMALE', 28);
 
--- where level 1 - junior, 2 - middle, 3 - senior
+-- where level ENUM ('JUNIOR', 'MIDDLE', 'SENIOR')
 
- INSERT INTO skills (id, language, level) VALUES (1, 'Java', 2);
- INSERT INTO skills (id, language, level) VALUES (2, 'JS', 1);
- INSERT INTO skills (id, language, level) VALUES (3, 'C++', 2);
- INSERT INTO skills (id, language, level) VALUES (4, 'Java', 3);
- INSERT INTO skills (id, language, level) VALUES (5, 'C#', 2);
+ INSERT INTO skills (id, language, level) VALUES (1, 'Java', 'MIDDLE');
+ INSERT INTO skills (id, language, level) VALUES (2, 'JS', 'JUNIOR');
+ INSERT INTO skills (id, language, level) VALUES (3, 'C++', 'MIDDLE');
+ INSERT INTO skills (id, language, level) VALUES (4, 'Java', 'SENIOR');
+ INSERT INTO skills (id, language, level) VALUES (5, 'C#', 'MIDDLE');
 
 
  INSERT INTO projects (id, projects_name) VALUES (1, 'SQL application');

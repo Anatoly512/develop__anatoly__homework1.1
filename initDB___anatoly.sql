@@ -1,15 +1,19 @@
 -- PostgreSQL version: 12.0
 
+CREATE TYPE gender AS ENUM ('MALE', 'FEMALE');
+CREATE TYPE level AS ENUM ('JUNIOR', 'MIDDLE', 'SENIOR');
 
+drop table if exists developers;
 CREATE TABLE developers (
 	id serial NOT NULL,
 	name character varying(200),
-	gender int2,
+	gender gender,
 	age int2,
 	CONSTRAINT id1 PRIMARY KEY (id)
 
 );
 
+drop table if exists projects;
 CREATE TABLE projects (
 	id serial NOT NULL,
 	projects_name character varying(200),
@@ -17,6 +21,7 @@ CREATE TABLE projects (
 
 );
 
+drop table if exists companies;
 CREATE TABLE companies (
 	id serial NOT NULL,
 	company_name character varying(200),
@@ -24,6 +29,7 @@ CREATE TABLE companies (
 
 );
 
+drop table if exists customers;
 CREATE TABLE customers (
 	id serial NOT NULL,
 	name character varying(200),
@@ -31,14 +37,16 @@ CREATE TABLE customers (
 
 );
 
+drop table if exists skills;
 CREATE TABLE skills (
 	id serial NOT NULL,
 	language character varying(200),
-	level int2,
+	level level,
 	CONSTRAINT id5 PRIMARY KEY (id)
 
 );
 
+drop table if exists customers_projects;
 CREATE TABLE customers_projects (
 	id serial NOT NULL,
 	projects_id serial,
@@ -57,6 +65,7 @@ ALTER TABLE customers_projects ADD CONSTRAINT customers_fk FOREIGN KEY (id_custo
 REFERENCES customers (id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 
+drop table if exists companies_projects;
 CREATE TABLE companies_projects (
 	id serial NOT NULL,
 	projects_id serial,
@@ -75,6 +84,7 @@ ALTER TABLE companies_projects ADD CONSTRAINT companies_fk FOREIGN KEY (id_compa
 REFERENCES companies (id) MATCH FULL
 ON DELETE SET NULL ON UPDATE CASCADE;
 
+drop table if exists developers_skills;
 CREATE TABLE developers_skills (
 	id serial NOT NULL,
 	developers_id serial,
@@ -85,6 +95,7 @@ CREATE TABLE developers_skills (
 
 );
 
+drop table if exists developers_projects;
 CREATE TABLE developers_projects (
 	id serial NOT NULL,
 	projects_id serial,
